@@ -778,7 +778,7 @@ export class Lrud {
 
     // ...give an opportunity for the move to be cancelled by the leaving node
     if (currentFocusNode && currentFocusNode.shouldCancelLeave) {
-      if (currentFocusNode.shouldCancelLeave(currentFocusNode, focusableNode)) {
+      if (currentFocusNode.shouldCancelLeave(currentFocusNode, focusableNode, direction)) {
         if (currentFocusNode.onLeaveCancelled) {
           currentFocusNode.onLeaveCancelled(currentFocusNode, focusableNode)
         }
@@ -792,7 +792,7 @@ export class Lrud {
 
     // ...give an opportunity for the move to be cancelled by the entering node
     if (focusableNode.shouldCancelEnter) {
-      if (focusableNode.shouldCancelEnter(currentFocusNode, focusableNode)) {
+      if (focusableNode.shouldCancelEnter(currentFocusNode, focusableNode, direction)) {
         if (focusableNode.onEnterCancelled) {
           focusableNode.onEnterCancelled(currentFocusNode, focusableNode)
         }

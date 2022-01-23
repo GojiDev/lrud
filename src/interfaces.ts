@@ -44,9 +44,9 @@ export interface Node extends Tree<Node> {
   overrideSources?: { direction: Direction, node: Node }[]
   onLeave?: (leave: Node) => void
   onEnter?: (enter: Node) => void
-  shouldCancelLeave?: (leave: Node, enter: Node) => boolean
+  shouldCancelLeave?: (leave: Node, enter: Node, direction: Direction) => boolean
   onLeaveCancelled?: (currentFocusNode: Node, focusableNode: Node) => void
-  shouldCancelEnter?: (leave: Node, enter: Node) => boolean
+  shouldCancelEnter?: (leave: Node, enter: Node, direction: Direction) => boolean
   onEnterCancelled?: (currentFocusNode: Node, focusableNode: Node) => void
   onSelect?: (node: Node) => void
   onInactive?: (node: Node) => void
